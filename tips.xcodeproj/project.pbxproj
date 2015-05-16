@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB21EBE01B07EBCF008CB716 /* walkthrough.gif in Resources */ = {isa = PBXBuildFile; fileRef = CB21EBDF1B07EBCF008CB716 /* walkthrough.gif */; };
 		CBA1E8071B040E330075ACB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA1E8061B040E330075ACB1 /* AppDelegate.swift */; };
 		CBA1E8091B040E330075ACB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA1E8081B040E330075ACB1 /* ViewController.swift */; };
 		CBA1E80C1B040E330075ACB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA1E80A1B040E330075ACB1 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB21EBDF1B07EBCF008CB716 /* walkthrough.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = walkthrough.gif; path = ../../../../Documents/walkthrough.gif; sourceTree = "<group>"; };
 		CBA1E8011B040E330075ACB1 /* tips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA1E8051B040E330075ACB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBA1E8061B040E330075ACB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		CBA1E8031B040E330075ACB1 /* tips */ = {
 			isa = PBXGroup;
 			children = (
+				CB21EBDF1B07EBCF008CB716 /* walkthrough.gif */,
 				CBA1E8061B040E330075ACB1 /* AppDelegate.swift */,
 				CBA1E8261B0563D30075ACB1 /* SettingViewController.swift */,
 				CBA1E8081B040E330075ACB1 /* ViewController.swift */,
@@ -201,6 +204,7 @@
 				CBA1E80C1B040E330075ACB1 /* Main.storyboard in Resources */,
 				CBA1E8111B040E330075ACB1 /* LaunchScreen.xib in Resources */,
 				CBA1E80E1B040E330075ACB1 /* Images.xcassets in Resources */,
+				CB21EBE01B07EBCF008CB716 /* walkthrough.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +351,8 @@
 		CBA1E8211B040E330075ACB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = tips/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -358,7 +363,8 @@
 		CBA1E8221B040E330075ACB1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = tips/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -419,6 +425,7 @@
 				CBA1E8221B040E330075ACB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CBA1E8231B040E330075ACB1 /* Build configuration list for PBXNativeTarget "tipsTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +434,7 @@
 				CBA1E8251B040E330075ACB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

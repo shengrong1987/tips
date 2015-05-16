@@ -1,2 +1,4 @@
-xcuserdata/ 
+**/xcuserdata/**
 UserInterfaceState.xcuserstate
+**/xcshareddata/**
+*.pbxproj
