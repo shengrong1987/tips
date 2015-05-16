@@ -126,6 +126,13 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SmJ-hB-yKx">
+                                        <rect key="frame" x="201" y="179" width="103" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -141,6 +148,7 @@
                     <connections>
                         <outlet property="billField" destination="4Sp-s1-a7e" id="Wmj-ye-Q2B"/>
                         <outlet property="billView" destination="EoI-yl-VTZ" id="dMO-Ui-mcp"/>
+                        <outlet property="customerTip" destination="SmJ-hB-yKx" id="Czu-fX-RM6"/>
                         <outlet property="navbar" destination="b1i-GD-Ngg" id="e34-R6-kLl"/>
                         <outlet property="partyControl" destination="C5k-gl-W2l" id="PqK-e1-g3L"/>
                         <outlet property="tipContainer" destination="ESO-E5-Xw1" id="LO5-Nd-7aB"/>

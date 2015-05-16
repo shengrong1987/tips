@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  tips
@@ -18,19 +19,29 @@ class ViewController: UIViewController {
     @IBOutlet var partyControl: UISwitch!
     @IBOutlet var billView: UIView!
     @IBOutlet var navbar: UINavigationBar!
+    @IBOutlet var customerTip: UILabel!
     
     let BILL_VIEW_AFTER_POS_Y : CGFloat = 64;
     let BILL_VIEW_ORIGINAL_PSO_Y : CGFloat = 120;
     let TIP_VIEW_AFTER_POS_Y : CGFloat = 131;
     
+    var swipeBeganLocation:CGFloat?;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         tipLabel.text = "$0.00";
         totalLabel.text = "$0.00";
+        
+        //initialize ui position
         tipContainer.frame.origin.y = self.view.frame.height;
         tipContainer.alpha = 0;
+        billView.frame.origin.y = self.BILL_VIEW_ORIGINAL_PSO_Y;
+        billField.becomeFirstResponder();
+        self.customerTip.alpha = 0;
         
+        //get data from defaultuserset
         let defaults = NSUserDefaults.standardUserDefaults()
         var index = defaults.integerForKey("IndexOfDefaultPercentage");
         tipControl.selectedSegmentIndex = index;
@@ -41,9 +52,8 @@ class ViewController: UIViewController {
         }else{
             billField.text = String(format: "%.2f",defaults.doubleForKey("BillAmount"));
         }
-        billView.frame.origin.y = self.BILL_VIEW_ORIGINAL_PSO_Y;
-        billField.becomeFirstResponder();
         
+        //adjust position and tip
         if(!billField.text.isEmpty){
             showTipContainer();
             onEditingChange(self);
@@ -68,6 +78,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onEditingChange(sender: AnyObject) {
+        self.customerTip.alpha = 0;
         if(billField.text==""){
             self.hideTipContainer();
         }else{
@@ -105,6 +116,63 @@ class ViewController: UIViewController {
     
     @IBAction func onPartyChange(sender: AnyObject) {
         onEditingChange(sender);
+    }
+    
+//    @IBAction func onSwipeTotal(sender: UISwipeGestureRecognizer) {
+//        var billAmount = (self.billField.text as NSString).doubleValue;
+//        var totalAmount = (self.totalLabel.text!.stringByReplacingOccurrencesOfString("$", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil) as NSString).doubleValue;
+//        var direction:UISwipeGestureRecognizerDirection = sender.direction;
+//        var state:UIGestureRecognizerState = sender.state;
+//        if(state == .Ended){
+//            var swipeEndlocation:CGFloat = sender.locationInView(self.view).x;
+//            println("End\(swipeEndlocation)");
+//            var distance = floor(Double(swipeBeganLocation!) - Double(swipeEndlocation));
+//            if(direction == .Left){
+//                totalAmount = totalAmount - distance;
+//                if(totalAmount>=billAmount){
+//                    self.totalLabel.text = String(format: "$%.2f",totalAmount);
+//                }
+//            }else{
+//                totalAmount = totalAmount + distance;
+//                self.totalLabel.text = String(format: "$%.2f",totalAmount);
+//            }
+//        }
+//        adjustTipByTotal();
+//    }
+    
+    func adjustTipByTotal(){
+        var billAmount = (self.billField.text as NSString).doubleValue;
+        var totalAmount = (self.totalLabel.text!.stringByReplacingOccurrencesOfString("$", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil) as NSString).doubleValue;
+        self.tipLabel.text = String(format: "$%.2f", totalAmount - billAmount);
+        self.customerTip.alpha = 1;
+        self.customerTip.text = String(format: "$%.1f",((totalAmount-billAmount)/billAmount)*100);
+        self.customerTip.text = self.customerTip.text! + "%";
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        for (index,value) in enumerate(touches){
+            if(index==0){
+                swipeBeganLocation = (value as! UITouch).locationInView(self.view).x;
+                println("Start\(swipeBeganLocation)");
+            }
+        }
+    }
+    
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        for touch : AnyObject in touches{
+            var swipeEndPosition:CGFloat = touch.locationInView(self.view).x;
+            var distance = Double(swipeBeganLocation!) - Double(swipeEndPosition);
+            var billAmount = (self.billField.text as NSString).doubleValue;
+            var totalAmount = (self.totalLabel.text!.stringByReplacingOccurrencesOfString("$", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil) as NSString).doubleValue;
+            totalAmount = totalAmount - distance/50;
+            if(totalAmount>=billAmount){
+                self.totalLabel.text = String(format: "$%.2f",totalAmount);
+            }else{
+                self.totalLabel.text = String(format: "$%.2f",billAmount);
+            }
+            swipeBeganLocation = swipeEndPosition;
+        }
+        adjustTipByTotal();
     }
     
     func hideTipContainer(){
