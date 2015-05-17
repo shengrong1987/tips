@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB21EBE01B07EBCF008CB716 /* walkthrough.gif in Resources */ = {isa = PBXBuildFile; fileRef = CB21EBDF1B07EBCF008CB716 /* walkthrough.gif */; };
+		CB21EBE21B07F5F7008CB716 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB21EBE11B07F5F7008CB716 /* Images-2.xcassets */; };
 		CBA1E8071B040E330075ACB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA1E8061B040E330075ACB1 /* AppDelegate.swift */; };
 		CBA1E8091B040E330075ACB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA1E8081B040E330075ACB1 /* ViewController.swift */; };
 		CBA1E80C1B040E330075ACB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA1E80A1B040E330075ACB1 /* Main.storyboard */; };
@@ -15,7 +16,6 @@
 		CBA1E8111B040E330075ACB1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA1E80F1B040E330075ACB1 /* LaunchScreen.xib */; };
 		CBA1E81D1B040E330075ACB1 /* tipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA1E81C1B040E330075ACB1 /* tipsTests.swift */; };
 		CBA1E8271B0563D30075ACB1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA1E8261B0563D30075ACB1 /* SettingViewController.swift */; };
-		CBA1E8291B05685E0075ACB1 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = CBA1E8281B05685E0075ACB1 /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		CB21EBDF1B07EBCF008CB716 /* walkthrough.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = walkthrough.gif; path = ../../../../Documents/walkthrough.gif; sourceTree = "<group>"; };
+		CB21EBE11B07F5F7008CB716 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		CBA1E8011B040E330075ACB1 /* tips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA1E8051B040E330075ACB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBA1E8061B040E330075ACB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		CBA1E81B1B040E330075ACB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBA1E81C1B040E330075ACB1 /* tipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipsTests.swift; sourceTree = "<group>"; };
 		CBA1E8261B0563D30075ACB1 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		CBA1E8281B05685E0075ACB1 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +90,8 @@
 				CBA1E80A1B040E330075ACB1 /* Main.storyboard */,
 				CBA1E80D1B040E330075ACB1 /* Images.xcassets */,
 				CBA1E80F1B040E330075ACB1 /* LaunchScreen.xib */,
+				CB21EBE11B07F5F7008CB716 /* Images-2.xcassets */,
 				CBA1E8041B040E330075ACB1 /* Supporting Files */,
-				CBA1E8281B05685E0075ACB1 /* readme.md */,
 			);
 			path = tips;
 			sourceTree = "<group>";
@@ -204,6 +204,7 @@
 				CBA1E80C1B040E330075ACB1 /* Main.storyboard in Resources */,
 				CBA1E8111B040E330075ACB1 /* LaunchScreen.xib in Resources */,
 				CBA1E80E1B040E330075ACB1 /* Images.xcassets in Resources */,
+				CB21EBE21B07F5F7008CB716 /* Images-2.xcassets in Resources */,
 				CB21EBE01B07EBCF008CB716 /* walkthrough.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,7 +225,6 @@
 			files = (
 				CBA1E8091B040E330075ACB1 /* ViewController.swift in Sources */,
 				CBA1E8071B040E330075ACB1 /* AppDelegate.swift in Sources */,
-				CBA1E8291B05685E0075ACB1 /* readme.md in Sources */,
 				CBA1E8271B0563D30075ACB1 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,7 +351,7 @@
 		CBA1E8211B040E330075ACB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = tips/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -363,7 +363,7 @@
 		CBA1E8221B040E330075ACB1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = tips/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;

@@ -118,6 +118,12 @@ class ViewController: UIViewController {
         onEditingChange(sender);
     }
     
+    func textFieldShouldReturn(textField: UITextField!) -> Bool{
+        self.billField.resignFirstResponder();
+        view.endEditing(true);
+        return true;
+    }
+    
 //    @IBAction func onSwipeTotal(sender: UISwipeGestureRecognizer) {
 //        var billAmount = (self.billField.text as NSString).doubleValue;
 //        var totalAmount = (self.totalLabel.text!.stringByReplacingOccurrencesOfString("$", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil) as NSString).doubleValue;
@@ -175,6 +181,7 @@ class ViewController: UIViewController {
         adjustTipByTotal();
     }
     
+    
     func hideTipContainer(){
         UIView.animateWithDuration(0.5,
             delay: 0.1,
@@ -199,7 +206,7 @@ class ViewController: UIViewController {
                 self.tipContainer.frame.origin.y = self.TIP_VIEW_AFTER_POS_Y;
                 self.billView.frame.origin.y = self.BILL_VIEW_AFTER_POS_Y;
                 self.tipContainer.alpha = 1.0;
-                self.billView.alpha = 0.8;
+                self.billView.alpha = 0.9;
             },
             completion:{finished in
                 
